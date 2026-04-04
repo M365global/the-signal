@@ -148,7 +148,7 @@ export default async function Home() {
             Curated daily for the focused mind. <br />Digital signal, physical soul.
           </p>
           <a 
-            href="mailto:editor@yourdomain.com" 
+            href="mailto:agent@purcellpress.com" 
             className="text-xs font-bold tracking-widest uppercase text-zinc-400 hover:text-zinc-900 transition-colors border-b border-transparent hover:border-zinc-900 pb-1"
           >
             Contact
