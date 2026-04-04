@@ -1,7 +1,7 @@
 ---
 title: "The AI Hardware Race"
 quote: "Silicon is the new oil."
-image_url: "/images/YOURFIRED.png"
+image_url: "/images/FIRED.png"
 date: 2026-04-04
 draft: false
 layout: post
