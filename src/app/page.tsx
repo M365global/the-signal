@@ -39,10 +39,24 @@ export default async function Home() {
                 <span className="text-zinc-300 group-open:rotate-45 transition-transform duration-300">+</span>
               </summary>
               <div className="pb-10 space-y-6 animate-in fade-in slide-in-from-top-2 duration-500">
+                
+                {/* ENHANCED: The Headline Image Slot */}
+                {item.image_url && (
+                  <div className="relative w-full aspect-[2/1] md:aspect-[21/9] overflow-hidden rounded-xl bg-zinc-100 ring-1 ring-zinc-900/5 shadow-sm">
+                    <Image 
+                      src={item.image_url} 
+                      alt={item.title}
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 768px) 100vw, 672px"
+                    />
+                  </div>
+                )}
+
                 <blockquote className="border-l-2 border-zinc-900 pl-6 italic text-zinc-500 text-lg leading-relaxed">
                   &quot;{item.quote}&quot;
                 </blockquote>
-                <p className="text-zinc-600 leading-relaxed text-lg">
+                <p className="text-zinc-600 leading-relaxed text-lg whitespace-pre-line">
                   {item.commentary}
                 </p>
               </div>
@@ -98,32 +112,34 @@ export default async function Home() {
             </div>
           </section>
         )}
-{/* Writer Invitation Section */}
-<section className="mt-32 mb-20 py-20 border-t border-zinc-100">
-  <div className="max-w-md">
-    <h3 className="text-2xl font-medium tracking-tight text-zinc-900 mb-4">
-      The table is open.
-    </h3>
-    <p className="text-zinc-500 mb-8 leading-relaxed">
-      We are looking for writers who prioritize insight over outrage. If you have a signal to share, let us know where to find your work.
-    </p>
-    
-    <div className="flex flex-col sm:flex-row gap-3">
-      <Input 
-        type="url" 
-        placeholder="Link to your portfolio or latest piece" 
-        className="bg-zinc-50/50 border-zinc-200 focus-visible:ring-zinc-400"
-      />
-      <Button className="bg-zinc-900 text-zinc-50 hover:bg-zinc-800 transition-all active:scale-95">
-        Apply
-      </Button>
-    </div>
-    
-    <p className="mt-4 text-[10px] text-zinc-400 uppercase tracking-widest">
-      Strictly curated. Responses within 48 hours.
-    </p>
-  </div>
-</section>
+
+        {/* Writer Invitation Section */}
+        <section className="mt-32 mb-20 py-20 border-t border-zinc-100">
+          <div className="max-w-md">
+            <h3 className="text-2xl font-medium tracking-tight text-zinc-900 mb-4">
+              The table is open.
+            </h3>
+            <p className="text-zinc-500 mb-8 leading-relaxed">
+              We are looking for writers who prioritize insight over outrage. If you have a signal to share, let us know where to find your work.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Input 
+                type="url" 
+                placeholder="Link to your portfolio or latest piece" 
+                className="bg-zinc-50/50 border-zinc-200 focus-visible:ring-zinc-400"
+              />
+              <Button className="bg-zinc-900 text-zinc-50 hover:bg-zinc-800 transition-all active:scale-95">
+                Apply
+              </Button>
+            </div>
+            
+            <p className="mt-4 text-[10px] text-zinc-400 uppercase tracking-widest">
+              Strictly curated. Responses within 48 hours.
+            </p>
+          </div>
+        </section>
+        
         {/* 4. Footer: Final Sign-off */}
         <footer className="pt-24 border-t border-zinc-100 text-center">
           <div className="mb-10 text-zinc-300 text-2xl">✓</div>
@@ -137,7 +153,6 @@ export default async function Home() {
           >
             Contact
           </a>
-
         </footer>
 
       </div>
