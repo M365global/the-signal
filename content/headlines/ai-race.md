@@ -33,12 +33,6 @@ The "Silicon-for-Oil" Swap
 
 The image of a silicon chip firing an oil barrel isn't just a metaphor; it’s a forecast. We are seeing a complete inversion of the old energy-for-tech trade.
 
-Old World Order (1970–2010) vs. New World Order (2026+)
-Primary Resource: Crude Oil vs. Pure Silicon Ingots
-The Bottleneck: Refineries vs. Lithography (EUV)
-Power Projection: Aircraft Carriers vs. Fab Capacity
-Economic Indicator: Price per Barrel vs. Price per Compute-Hour
-
 What This Means for Tech Managers? If you are sitting in a boardroom today, you need to move past "software eats the world." Software is now being eaten by the hardware it runs on.
 
 Hardware is No Longer a Commodity: You cannot "just buy more servers" if the ingots aren't being poured or the EUV machines aren't being delivered.
@@ -46,5 +40,3 @@ Hardware is No Longer a Commodity: You cannot "just buy more servers" if the ing
 You need to know where your silicon starts its life. A disruption in the ingot supply chain is now more catastrophic than a 20% spike in energy costs.
 
 The Yield is King: Since we can’t make more "land" (wafer capacity), the only way to grow is to make the most of every square millimeter.
-
-The Bottom Line: We’ve traded the oil rig for the cleanroom. The machines have the capacity; the earth has the silicon; the only thing we're short on is the patience to wait for the next delivery from the Netherlands.
