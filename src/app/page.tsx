@@ -3,8 +3,6 @@ import { getHeadlines, type Headline } from "../lib/headlines";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import ReactMarkdown from 'react-markdown';
-
-// FIX: Updated import path to match your folder structure and the component name
 import ShareButton from '../components/ui/share';
 
 export const revalidate = 14400;
@@ -80,10 +78,23 @@ export default async function Home() {
                       </div>
                     )}
 
-                    <div className="flex-1 space-y-3">
-                      <h2 className="text-3xl md:text-4xl font-serif font-bold leading-[1.1] text-zinc-900 group-hover:text-red-800 transition-colors print:text-4xl">
-                        {item.title}
-                      </h2>
+                    <div className="flex-1 space-y-3 w-full">
+                      
+                      {/* Flex Container for Header + Share Button */}
+                      <div className="flex justify-between items-start gap-4">
+                        <h2 className="text-3xl md:text-4xl font-serif font-bold leading-[1.1] text-zinc-900 group-hover:text-red-800 transition-colors print:text-4xl">
+                          {item.title}
+                        </h2>
+                        
+                        {/* Share Button placed here! */}
+                        <div className="print:hidden shrink-0 mt-1">
+                          <ShareButton 
+                            title={item.title} 
+                            text={item.quote} 
+                          />
+                        </div>
+                      </div>
+
                       <p className="text-zinc-600 font-serif text-lg italic leading-snug group-open:hidden print:block print:text-zinc-500">
                         &quot;{item.quote}&quot;
                       </p>
@@ -133,14 +144,7 @@ export default async function Home() {
                           <div className="w-8 h-8 bg-zinc-900 flex items-center justify-center text-white text-[10px] font-bold">S</div>
                           <span className="text-xs font-serif italic text-zinc-500 font-bold uppercase tracking-widest print:text-black">Signal Editorial</span>
                         </div>
-                        
-                        {/* The Share Button Component */}
-                        <div className="print:hidden">
-                          <ShareButton 
-                            title={item.title} 
-                            text={item.quote} 
-                          />
-                        </div>
+                        {/* ShareButton was removed from here */}
                       </div>
                     </div>
                   </div>
