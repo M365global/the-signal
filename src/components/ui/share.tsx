@@ -23,7 +23,7 @@ export default function ShareButton({ title, text }: { title: string, text: stri
   return (
     <button 
       onClick={handleShare}
-      className="text-zinc-300 hover:text-zinc-900 transition-colors p-2 -ml-2 rounded-md hover:bg-zinc-50"
+      className="text-zinc-500 border border-zinc-200 hover:bg-zinc-900 hover:text-white transition-all p-2 rounded-none print:hidden"
       aria-label="Share this post"
     >
       <Share className="w-4 h-4" />

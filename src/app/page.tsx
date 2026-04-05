@@ -4,6 +4,9 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import ReactMarkdown from 'react-markdown';
 
+// FIX: Updated import path to match your folder structure and the component name
+import ShareButton from '../components/ui/share';
+
 export const revalidate = 14400;
 
 export const metadata = {
@@ -61,7 +64,7 @@ export default async function Home() {
                 <summary className="list-none cursor-pointer outline-none print:cursor-default">
                   <div className="flex flex-col md:flex-row gap-8 items-start">
                     
-                    {/* Iconic Thumbnail Window with LCP Optimization */}
+                    {/* Iconic Thumbnail Window */}
                     {item.image_url && typeof item.image_url === 'string' && (
                       <div className="relative flex-shrink-0 w-full md:w-40 aspect-square overflow-hidden bg-zinc-100 group-open:hidden ring-1 ring-black/10 print:hidden">
                         <div className="absolute inset-0 z-10 border-t border-l border-white/40 pointer-events-none" />
@@ -91,7 +94,7 @@ export default async function Home() {
                 {/* 3. The Cinematic Spread */}
                 <div className="mt-16 space-y-12 animate-in fade-in zoom-in-95 duration-700 print:mt-8 print:animate-none">
                   
-                  {/* Hero Image: Mobile Full-Bleed Hack */}
+                  {/* Hero Image */}
                   {item.image_url && typeof item.image_url === 'string' && (
                     <div className="-mx-6 md:mx-0 relative w-auto md:w-full aspect-[16/7] overflow-hidden bg-zinc-200 shadow-inner ring-1 ring-black/5 print:ring-0">
                       <div className="absolute inset-0 z-10 bg-gradient-to-tr from-white/5 via-transparent to-transparent pointer-events-none print:hidden" />
@@ -105,13 +108,11 @@ export default async function Home() {
                     </div>
                   )}
 
-                  {/* The Golden Measure: Narrow Text Container */}
                   <div className="max-w-xl mx-auto space-y-10">
                     <blockquote className="text-4xl font-serif font-bold italic text-zinc-300 leading-tight border-l-8 border-red-800 pl-10 py-2 print:text-zinc-400 print:border-zinc-900">
                       {item.quote}
                     </blockquote>
 
-                    {/* Precision Typography Stylesheet */}
                     <div className="prose prose-zinc prose-xl font-serif leading-[1.8] text-zinc-800 antialiased prose-p:mb-10 prose-p:leading-relaxed [text-wrap:pretty] print:text-black">
                       <ReactMarkdown 
                         components={{
@@ -132,14 +133,14 @@ export default async function Home() {
                           <div className="w-8 h-8 bg-zinc-900 flex items-center justify-center text-white text-[10px] font-bold">S</div>
                           <span className="text-xs font-serif italic text-zinc-500 font-bold uppercase tracking-widest print:text-black">Signal Editorial</span>
                         </div>
-                        <a 
-                          href={`https://www.linkedin.com/sharing/share-offsite/?url=https://thesignal.press`} 
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[10px] font-black uppercase tracking-widest text-zinc-400 hover:text-zinc-900 transition-colors print:hidden"
-                        >
-                          Share / LinkedIn
-                        </a>
+                        
+                        {/* The Share Button Component */}
+                        <div className="print:hidden">
+                          <ShareButton 
+                            title={item.title} 
+                            text={item.quote} 
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
