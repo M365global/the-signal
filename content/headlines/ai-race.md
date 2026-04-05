@@ -1,5 +1,5 @@
 ---
-title: "The AI Hardware Race"
+title: "The AI hardware race"
 quote: "Silicon is the new oil."
 image_url: "/images/FIRED.png"
 date: 2026-04-04
@@ -23,17 +23,15 @@ There is a poetic irony in the geopolitical shift we’re witnessing. We used to
 
 The process of creating a "Monocrystalline Silicon Ingot"—the shiny, heavy cylinder that gets sliced into wafers—is the new refining.
 
-Here's the thing, China currently controls about 72% of global silicon production.
-
-While "industrial" silicon is common, "electronic grade" silicon (99.9999999% pure) is the new high-octane fuel.
+Here's the thing, China currently controls about 72% of global silicon production. While industrial-grade silicon is common, electronic grade silicon (99.9999999% pure) is the new high-octane fuel.
 
 If a nation controls the supply of these ingots, they don't just control a market; they control the ability of every other nation to process data, guide missiles, or even run a modern dishwasher.
 
-The "Silicon-for-Oil" Swap
+Then there's the "Silicon-for-Oil" Swap. The image of a silicon chip firing an oil barrel isn't just a metaphor; it’s a forecast. We are seeing a complete inversion of the old energy-for-tech trade.
 
-The image of a silicon chip firing an oil barrel isn't just a metaphor; it’s a forecast. We are seeing a complete inversion of the old energy-for-tech trade.
+What This Means for Tech Managers?
 
-What This Means for Tech Managers? If you are sitting in a boardroom today, you need to move past "software eats the world." Software is now being eaten by the hardware it runs on.
+If you are sitting in a boardroom today, you need to move past "software eats the world." Software is now being eaten by the hardware it runs on.
 
 Hardware is No Longer a Commodity: You cannot "just buy more servers" if the ingots aren't being poured or the EUV machines aren't being delivered.
 
