@@ -1,6 +1,6 @@
 ---
 title: "The Perfect Society: How AI’s Flawless Cooperation Challenges the Human Edge"
-quote: 
+quote: "With artificial intelligence, we are summoning the demon"
 image_url: "/images/ai-mind.png"
 date: 2026-04-04
 draft: false
