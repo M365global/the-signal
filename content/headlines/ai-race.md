@@ -1,5 +1,5 @@
 ---
-title: "The AI hardware race"
+title: "The AI Hardware Race"
 quote: "Silicon is the new oil."
 image_url: "/images/FIRED.png"
 date: 2026-04-04
