@@ -14,7 +14,10 @@ export const metadata = {
 
 export default async function Home() {
   const headlines = getHeadlines();
-  const currentDate = new Date().toLocaleDateString("en-US", { month: "long", day: "numeric" });
+  const currentDate = new Date().toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+  });
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -33,7 +36,6 @@ export default async function Home() {
       />
 
       <div className="max-w-3xl mx-auto px-6 py-12 print:py-0">
-        {/* 1. Editorial Masthead */}
         <header className="mb-20 print:mb-10">
           <div className="flex justify-between items-baseline mb-4 border-b border-zinc-100 pb-2 print:border-zinc-900">
             <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400 print:text-zinc-900">
@@ -54,7 +56,6 @@ export default async function Home() {
           </h1>
         </header>
 
-        {/* 2. The News Stream */}
         <section className="space-y-16 mb-32 print:space-y-20">
           {headlines.map((item: Headline, index: number) => (
             <article
@@ -64,24 +65,22 @@ export default async function Home() {
               <details open className="group print:block">
                 <summary className="list-none cursor-pointer outline-none print:cursor-default">
                   <div className="flex flex-col md:flex-row gap-8 items-start">
-                    {/* Iconic Thumbnail Window */}
                     {item.image_url && typeof item.image_url === "string" && (
-                      <div className="relative flex-shrink-0 w-full md:w-40 aspect-square overflow-hidden bg-zinc-100 group-open:hidden ring-1 ring-black/10 print:hidden">
+                      <div className="summary-thumb relative flex-shrink-0 w-full md:w-40 aspect-square overflow-hidden bg-zinc-100 ring-1 ring-black/10 print:hidden">
                         <div className="absolute inset-0 z-10 border-t border-l border-white/40 pointer-events-none" />
                         <Image
                           src={item.image_url}
                           alt={item.title}
                           fill
-                          sizes="160px"
+                          sizes="(max-width: 768px) 100vw, 160px"
                           priority={index === 0}
                           loading={index === 0 ? "eager" : "lazy"}
-                          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                          className="object-cover grayscale transition-all duration-500"
                         />
                       </div>
                     )}
 
                     <div className="flex-1 space-y-3 w-full">
-                      {/* Flex Container for Header + Share Button */}
                       <div className="flex justify-between items-start gap-4">
                         <h2 className="text-3xl md:text-4xl font-sans font-bold leading-[1.1] text-zinc-900 group-hover:text-red-800 transition-colors print:text-4xl">
                           {item.title}
@@ -99,19 +98,21 @@ export default async function Home() {
                   </div>
                 </summary>
 
-                {/* 3. The Cinematic Spread */}
                 <div className="mt-16 space-y-12 animate-in fade-in zoom-in-95 duration-700 print:mt-8 print:animate-none">
-                  {/* Hero Image */}
                   {item.image_url && typeof item.image_url === "string" && (
-                    <div className="-mx-6 md:mx-0 relative w-auto md:w-full aspect-[16/7] overflow-hidden bg-zinc-200 shadow-inner ring-1 ring-black/5 print:ring-0">
-                      <div className="absolute inset-0 z-10 bg-gradient-to-tr from-white/5 via-transparent to-transparent pointer-events-none print:hidden" />
+                    <div className="-mx-6 md:mx-0 relative w-auto md:w-full aspect-[4/3] md:aspect-[16/7] overflow-hidden bg-zinc-200 shadow-[0_8px_24px_rgba(0,0,0,0.10)] md:shadow-[0_20px_60px_rgba(0,0,0,0.12)] ring-1 ring-black/5 print:ring-0">
                       <Image
                         src={item.image_url}
                         alt={item.title}
                         fill
-                        sizes="(max-width: 1024px) 100vw, 800px"
-                        className="object-cover print:grayscale"
+                        sizes="(max-width: 768px) 100vw, 800px"
+                        quality={82}
+                        priority={index === 0}
+                        className="object-cover contrast-110 brightness-105 saturate-105 md:transition-transform md:duration-700 md:ease-out md:group-hover:scale-[1.03] print:grayscale"
                       />
+
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/8 pointer-events-none print:hidden" />
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.10))] pointer-events-none print:hidden" />
                     </div>
                   )}
 
@@ -123,7 +124,9 @@ export default async function Home() {
                     <div className="prose prose-zinc prose-xl font-sans leading-[1.8] text-zinc-800 antialiased prose-p:mb-10 prose-p:leading-relaxed [text-wrap:pretty] print:text-black">
                       <ReactMarkdown
                         components={{
-                          p: ({ children }) => <p className="mb-10 last:mb-0">{children}</p>,
+                          p: ({ children }) => (
+                            <p className="mb-10 last:mb-0">{children}</p>
+                          ),
                           strong: ({ children }) => (
                             <strong className="font-bold text-black border-b-2 border-red-800/10 print:border-b-0">
                               {children}
@@ -134,7 +137,6 @@ export default async function Home() {
                         {item.commentary}
                       </ReactMarkdown>
 
-                      {/* Branded Signature */}
                       <div className="mt-16 pt-8 border-t border-zinc-100 flex items-center justify-between print:border-zinc-900">
                         <div className="flex items-center gap-4">
                           <div className="w-8 h-8 bg-zinc-900 flex items-center justify-center text-white text-[10px] font-bold">
@@ -153,7 +155,6 @@ export default async function Home() {
           ))}
         </section>
 
-        {/* 4. Brutalist Footer CTA */}
         <footer className="mt-40 bg-zinc-900 text-white p-16 relative overflow-hidden print:hidden">
           <div className="relative z-10 max-w-sm">
             <h4 className="text-4xl font-sans font-bold italic mb-6 leading-tight">
@@ -190,7 +191,6 @@ export default async function Home() {
           </span>
         </footer>
 
-        {/* Print-Only URL Tag */}
         <div className="hidden print:block text-center mt-20 border-t border-zinc-900 pt-8 text-[10px] font-bold uppercase tracking-widest">
           Original Signal available at: THEWEEKLYSIGNAL.PRESS
         </div>

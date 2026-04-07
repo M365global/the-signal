@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+details[open] .summary-thumb {
+  display: none;
+}
+
 @theme {
   --text-body-mobile: 1rem;      /* 16px */
   --text-body-desktop: 1.125rem; /* 18px */
